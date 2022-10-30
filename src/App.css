@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+:root {
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+  --background: #FFFFFA;
+  --black: #000103;
+  --jet: #333138;
+  --green1: #1D7874;
+  --green2: #679289;
+  --bluepurple1: #72A1E5;
+  --bluepurple2: #9883E5;
+  --browngray1: #BCB8B1;
+  --browngrey2: #8A817C;
+  --orange1: #EB4511;
+  --orange2: #B02E0C;
+  --teal: #007991;
+  --polished-pine: #8b9c98;
+  --olive: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  overscroll-behavior-y: none;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-size: 16px;
+  margin: 0px;
+  padding: 0;
+  display:grid;
+  color:var(--jet);
+  background-image: linear-gradient(to right, var(--green1), var(--green2));
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body::-webkit-scrollbar {
+  width:0.4rem;
+}
+
+body::-webkit-scrollbar-track{
+  background: var(--green2);
+}
+
+body::-webkit-scrollbar-thumb{
+  background: var(--jet);
+}
+
+::selection {
+  background: var(--teal); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--polished-pine); /* Gecko Browsers */
+}
+
+#AppWraper {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+a:link {
+  text-decoration: none;
+  /* color: var(--jet); */
+  
+}
+
+a:hover {
+  text-decoration: none;
+  /* color: var(--jet); */
+}
+
+a:visited {
+  text-decoration: none;
+  /* color: var(--jet); */
+}
+
+a:active {
+  text-decoration: none;
+  /* color: var(--jet); */
+}
+
+.link {
+  text-decoration: underline !important;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  list-style: none;
+}
+
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+#Header {
+  height: 20vh;
+  width: 50vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#HomeIcon {
+  width: 2vw;
+  height: 2vw;
+  padding: 2vh;
+  margin: 2vh;
+  border-radius: 1vw;
+}
+
+#HomeIcon:hover {
+  background-color: #FFFFFF25;
+}
+
+
+#JournalHeaderText {
+  font-family: "Varela Round";
+  color: white;
+  font-size: 2vw;
+}
+
+#Title {
+  padding: 2vh;
+  height: 40vh;
+}
+
+h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 100;
+  font-size: 6vw;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#SearchBar {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  height: 20vh
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cardShadow {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+.searchBarTag {
+  height: 10vh;
+  width: 60vw;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  font-size: 2vh;
+  padding: 1vh 5vh;
+  border-radius: 10vh;
+  z-index: 1;
+
+}
+
+#searchbarWhiteBox {
+  background-color: white;
+  height: 10vh;
+  width: 100vw;
+  position: absolute;
+  top: 75vh;
+}
+
+#Homepage {
+  background-color: white;
+  width: 100vw;
+  margin-top: -1vh;
+}
+
+.Card{
+  margin: 4vh;
+  padding: 3vh;
+  color: #000000;
+}
+
+h4 {
+  color: #000000
+}
+
+@media only screen and (max-width: 1000px) {
+  #JournalHeaderText {
+    font-size: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  #HomeIcon {
+    width: 20px;
+    height: 20px;
   }
+
+  h1 {
+    font-size: 60px;
+  }
+
 }
