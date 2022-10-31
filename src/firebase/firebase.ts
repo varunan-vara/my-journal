@@ -1,7 +1,7 @@
 // File is ignored
 import firebaseConfig from "./firebase-config";
 import * as firebase from 'firebase/app';
-import { getFirestore, query, orderBy, collection, getDocs, getDoc, limit, DocumentReference, DocumentData } from 'firebase/firestore';
+import { getFirestore, query, orderBy, collection, doc, getDocs, getDoc, limit, DocumentReference, DocumentData } from 'firebase/firestore';
 
 // Init Firebase
 const app = firebase.initializeApp(firebaseConfig);
@@ -65,6 +65,11 @@ async function getArticle (document: DocumentReference) {
     return returnval;
 }
 
+async function getArticlebyName (articleName: string) {
+    const docRef = doc(db, "blog-posts", articleName);
+    await getArticle(docRef);
+}
+
 // Function to get recent set of articles
 async function getRecentArticles(numberOfArticles : number) {
     const posts = collection(db, "blog-posts");
@@ -80,3 +85,4 @@ async function getRecentArticles(numberOfArticles : number) {
     return returnval;
 }
 
+export {getArticlebyName};

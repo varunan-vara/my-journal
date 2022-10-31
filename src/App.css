@@ -101,7 +101,7 @@ input:focus {
 
 #Header {
   height: 20vh;
-  width: 50vw;
+  width: 100vw;
   display: flex;
   align-items: center;
 }
@@ -130,11 +130,16 @@ input:focus {
   height: 40vh;
 }
 
+.cannotfindtext {
+  color: white;
+}
+
 h1 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 100;
   font-size: 6vw;
   color: white;
+  padding-left: 4vh;
 }
 
 #SearchBar {
@@ -142,7 +147,8 @@ h1 {
   width: 100vw;
   align-items: center;
   justify-content: center;
-  height: 20vh
+  height: 20vh;
+  flex-direction: horizontal;
 }
 
 .cardShadow {
@@ -167,8 +173,32 @@ h1 {
 
 }
 
+.searchButton {
+  height: 10vh;
+  width: 10vh;
+  background-color: #FFFFFF;
+  border-radius: 5vh;
+  z-index: 1;
+  border:none;
+  margin-left: 2vh;
+}
+
+.searchButton:hover, .searchBarTag:hover, .searchBarTag:focus {
+  background-color: #EEEEEE;
+}
+
+#dropdownIcon {
+  height: 2vh;
+  width: 2vh;
+}
+
+#magnifyingGlassIcon {
+  height: 2vh;
+  width: 2vh;
+}
+
 #searchbarWhiteBox {
-  background-color: white;
+  background-color: #EEEEEE;
   height: 10vh;
   width: 100vw;
   position: absolute;
@@ -176,19 +206,79 @@ h1 {
 }
 
 #Homepage {
-  background-color: white;
+  background-color: #EEEEEE;
   width: 100vw;
-  margin-top: -1vh;
+  margin-top: -3.5vh;
+  padding-bottom: 10vh;
 }
 
 .Card{
-  margin: 4vh;
+  margin: 5vh 8vw 10vh;
   padding: 3vh;
   color: #000000;
+  background-color: #FFFFFF;
+  border-radius: 3vh;
+}
+
+h2 {
+  margin-left: 4vh;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200;
+  font-size: 8vw;
 }
 
 h4 {
-  color: #000000
+  color: #000000;
+  font-size: 4vw;
+}
+
+p {
+  font-size: 0.8vw;
+}
+
+#Content {
+  background-color: #EEEEEE;
+}
+
+#ContentTitle {
+  color: #000000;
+  margin: 2vw 0;
+  padding: 2vw;
+  padding-top: 6vh;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 100;
+  padding-left: 0;
+  width: 100vw;
+  text-align: center;
+}
+
+#ContentDescr {
+  padding: 0 2vw;
+  font-weight: bold;
+}
+
+#ContentDate {
+  padding: 0 2vw;
+}
+
+.ContentP {
+  height: 500vh;
+  z-index: 1;
+  width: 96vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 2vw;
+  word-break: break-all;
+}
+
+
+@media only screen and (min-width: 500px) {
+  h2 {
+    font-size: 5vh
+  }
+  h4 {
+    font-size: 2vh;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -205,4 +295,68 @@ h4 {
     font-size: 60px;
   }
 
+  h4 {
+    color: #000000;
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+}
+
+#Footer {
+  background-color: #EEEEEE;
+  height: 20vh;
+margin-top: -4vh;
+}
+
+@media only screen and (max-width: 800px) {
+  #dropdownFuncButton {
+    display:none;
+  }
+  #ContentDescr {
+    padding: 0 20px;
+  }
+  
+  #ContentDate {
+    padding: 0 20px;
+  }
+  
+  .ContentP {
+    padding: 20px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  h1 {
+    font-size: 40px;
+  }
+  #Title {
+    padding: 2vh;
+    height: 30vh;
+  }
+  #searchbarWhiteBox {
+    background-color: #EEEEEE;
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    top: 65vh;
+  }
+  
+}
+
+@media only screen and (max-height: 800px) {
+  #Title {
+    height: 55vh
+  }
+  #searchbarWhiteBox {
+    background-color: #EEEEEE;
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    top: 100vh;
+  }
 }

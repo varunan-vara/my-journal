@@ -17,8 +17,7 @@ const Card : FC<content> = ({
     return(
         <div className="Card cardShadow">
             <Link to={toPath}><h4 className="cardH4">{title}</h4></Link>
-            <p className="cardP">{description}</p>
-            <p className="cardAuth">{author}</p>
+            <p className="cardAuth">{author} - {description}</p>
             <p className="cardDate">{convertedTime.getFullYear()}/{convertedTime.getMonth()}/{convertedTime.getDate()}</p>
         </div>
     )

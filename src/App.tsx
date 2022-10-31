@@ -16,21 +16,27 @@ function App() {
         <Route path="/" element={
         <div id="RouteContainer">
           <Title />
-          <SearchBar />
+          <SearchBar isContentPage={false}/>
           <Homepage />
         </div>
         } />
         <Route path="/Home" element={
         <div id="RouteContainer">
           <Title />
-          <SearchBar />
+          <SearchBar isContentPage={false}/>
           <Homepage />
         </div>
         } />
         <Route path="/Post/:type" element={
           <div id="RouteContainer">
-            <SearchBar />
+            <SearchBar isContentPage={true}/>
             <Content />
+          </div>
+        } />
+        <Route path="*" element={
+          <div id="RouteContainer">
+            <h1><br />Uh oh... That Page Does Not Exist :(</h1>
+            <h2 className="cannotfindtext">Click home button above to take you to the main website!</h2>
           </div>
         } />
       </Routes>
