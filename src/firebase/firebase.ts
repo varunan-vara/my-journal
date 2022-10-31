@@ -1,12 +1,17 @@
 // File is ignored
-import firebaseConfig from "./firebase-config";
+import {firebaseConfig, storageLoc} from "./firebase-config";
 import * as firebase from 'firebase/app';
 import { getFirestore, query, orderBy, collection, doc, getDocs, getDoc, limit, DocumentReference, DocumentData } from 'firebase/firestore';
+import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
 // Init Firebase
 const app = firebase.initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
+
+const storage = getStorage(app, storageLoc);
+
+console.log(storage)
 
 interface article {
     id: string;
@@ -35,7 +40,7 @@ async function getArticle (document: DocumentReference) {
     }
     // Build a better error system - not intuitive, very temporary
     if (!(snap.exists())) {
-        console.error("Could not find articles - getArticle() function. Error Table below:");
+        console.warn("Could not find articles - getArticle() function. Error Table below:");
         console.table({
             "DocumentReference" : document,
             "Document Id": document.id,
@@ -51,7 +56,7 @@ async function getArticle (document: DocumentReference) {
                 author: data.author,
                 description: data.description,
                 name: data.name,
-                date: data.date,
+                date: data.date.seconds,
                 wordcount: data.wourdcount,
                 tags: data.tags
             };
@@ -67,7 +72,8 @@ async function getArticle (document: DocumentReference) {
 
 async function getArticlebyName (articleName: string) {
     const docRef = doc(db, "blog-posts", articleName);
-    await getArticle(docRef);
+    const returnval = await getArticle(docRef);
+    return returnval
 }
 
 // Function to get recent set of articles

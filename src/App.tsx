@@ -18,6 +18,7 @@ function App() {
           <Title />
           <SearchBar isContentPage={false}/>
           <Homepage />
+          <Footer />
         </div>
         } />
         <Route path="/Home" element={
@@ -25,12 +26,14 @@ function App() {
           <Title />
           <SearchBar isContentPage={false}/>
           <Homepage />
+          <Footer />
         </div>
         } />
         <Route path="/Post/:type" element={
           <div id="RouteContainer">
             <SearchBar isContentPage={true}/>
             <Content />
+            <Footer />
           </div>
         } />
         <Route path="*" element={
@@ -41,7 +44,6 @@ function App() {
         } />
       </Routes>
       
-      <Footer />
     </div>
   </Router>
   );
